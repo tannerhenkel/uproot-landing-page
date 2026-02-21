@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uproot Clean Washing Machine Cleaner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Poppins',sans-serif;font-size:18px;line-height:1.75;color:#000;background:#fff;-webkit-font-smoothing:antialiased}
+.content{max-width:680px;margin:0 auto;padding:0 24px}
+p{margin-bottom:20px}
+.clearfix::after{content:"";display:table;clear:both}
+
+/* STICKY HEADER — hidden until product reveal */
+.sticky-header{position:fixed;top:0;left:0;right:0;z-index:100;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.08);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;opacity:0;pointer-events:none;transition:opacity .3s}
+.sticky-header.visible{opacity:1;pointer-events:auto}
+.sticky-header .logo-text{font-weight:700;font-size:16px;color:#3CA5B1;letter-spacing:-.3px}
+.sticky-header .header-btn{background:#22B401;color:#fff;font-size:13px;font-weight:700;padding:8px 18px;border-radius:6px;text-decoration:none;box-shadow:0 2px 6px rgba(0,0,0,.2)}
+
+/* HERO */
+.hero{text-align:center;padding:30px 20px 20px}
+.hero h1{font-size:30px;font-weight:800;line-height:1.3;margin-bottom:16px}
+.hero h1 em{font-style:italic}
+.hero .subheadline{font-size:18px;line-height:1.6;margin-bottom:16px}
+.hero .hook{font-style:italic;font-size:17px;color:#333;margin-bottom:24px}
+.divider{width:60%;max-width:400px;height:1px;background:#ddd;margin:30px auto;border:none}
+
+/* SPLIT COMPARISON */
+.split-compare{display:flex;gap:0;margin:30px 0;border-radius:8px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);position:relative}
+.split-side{flex:1;position:relative;min-height:250px;overflow:hidden}
+.split-side img{width:100%;height:100%;object-fit:cover;display:block}
+.split-overlay{position:absolute;bottom:0;left:0;right:0;padding:14px;background:linear-gradient(transparent,rgba(0,0,0,.8));color:#fff;text-align:center}
+.split-overlay .split-label{font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+.split-overlay .split-count{font-size:20px;font-weight:800}
+.split-overlay .split-count.red{color:#ff4444}
+.split-overlay .split-count.green{color:#44dd44}
+.split-vs{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:10;width:48px;height:48px;background:#ff0000;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;box-shadow:0 2px 10px rgba(0,0,0,.4);border:3px solid #fff}
+
+/* SUBHEADINGS */
+h2.sub{font-size:22px;font-weight:700;line-height:1.35;margin-top:40px;margin-bottom:18px;color:#000}
+h2.sub.center{text-align:center}
+
+/* EMPHASIS */
+.teal{color:#3CA5B1}
+.highlight{background-color:#FFF200;padding:2px 6px}
+.bold{font-weight:700}
+
+/* QA FORMAT */
+.qa-block .question{font-weight:400;margin-bottom:2px}
+.qa-block .answer{font-weight:600;margin-bottom:20px}
+
+/* FLOATED IMAGES (desktop text wrapping) */
+.img-right{float:right;max-width:280px;width:40%;margin:0 0 20px 24px;border-radius:4px;box-shadow:0 4px 16px rgba(0,0,0,.1)}
+.img-left{float:left;max-width:280px;width:40%;margin:0 24px 20px 0;border-radius:4px;box-shadow:0 4px 16px rgba(0,0,0,.1)}
+.section-img{width:100%;border-radius:4px;margin:20px 0;display:block;box-shadow:0 4px 16px rgba(0,0,0,.1)}
+
+/* BOLD CALLOUT */
+.bold-callout{text-align:center;font-weight:700;font-size:20px;margin:40px 0;line-height:1.5}
+
+/* BOXED SECTION */
+.boxed{background:#F5F5F5;border-radius:8px;padding:30px;margin:30px 0}
+
+/* NASA BOX */
+.nasa-img{width:100%;border-radius:8px;margin:20px 0;box-shadow:0 4px 20px rgba(0,0,0,.15)}
+
+/* ENZYME STEPS */
+.enzyme-step{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;padding:20px;background:#f9f9f9;border-radius:8px;border-left:4px solid #3CA5B1}
+.enzyme-num{flex-shrink:0;width:40px;height:40px;background:#3CA5B1;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px}
+.enzyme-step .enzyme-icon{width:50px;flex-shrink:0}
+.enzyme-step .enzyme-text{flex:1}
+.enzyme-step .enzyme-text strong{display:block;margin-bottom:4px}
+
+/* STEPS BOX */
+.steps-box{background:#F5F5F5;border-radius:8px;padding:30px;margin:30px 0}
+.step-item{display:flex;gap:12px;margin-bottom:16px;align-items:flex-start}
+.step-num{flex-shrink:0;width:32px;height:32px;background:#3CA5B1;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}
+
+/* BEFORE/AFTER */
+.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:30px 0}
+.ba-card{text-align:center}
+.ba-card h4{font-size:15px;font-weight:700;margin-bottom:10px;color:#3CA5B1}
+.ba-pair{display:flex;gap:8px}
+.ba-col{flex:1;text-align:center}
+.ba-col img{width:100%;border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+.ba-col .ba-label{font-size:12px;font-weight:600;text-transform:uppercase;margin-top:4px;color:#888}
+
+/* TESTIMONIALS */
+.testimonial{background:#F5F5F5;border-radius:8px;padding:24px;margin-bottom:20px;border:1px solid #eee}
+.testimonial .stars{color:#F5A623;font-size:20px;margin-bottom:8px}
+.testimonial .review-title{font-weight:700;font-size:16px;margin-bottom:8px}
+.testimonial .review-text{font-size:16px;line-height:1.6;margin-bottom:8px;font-style:italic}
+.testimonial .reviewer{font-weight:600;font-size:14px;color:#555}
+
+/* CTA */
+.cta-btn{display:block;width:100%;max-width:500px;margin:30px auto;padding:18px 24px;background:#22B401;color:#fff;font-family:'Poppins',sans-serif;font-size:18px;font-weight:700;text-align:center;text-decoration:none;border-radius:6px;box-shadow:0 3px 10px 2px rgba(0,0,0,.3);transition:transform .15s;cursor:pointer;border:none}
+.cta-btn:hover{transform:translateY(-2px)}
+.cta-btn.large{font-size:20px;padding:20px 28px}
+.cta-sub{text-align:center;font-size:13px;color:#888;margin-top:-20px;margin-bottom:30px}
+
+/* GUARANTEE */
+.guarantee-box{background:#E8F6F8;border-radius:8px;padding:30px;margin:30px 0;text-align:center}
+.guarantee-seal{width:120px;height:120px;margin:0 auto 16px;border-radius:50%;border:4px solid #3CA5B1;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 0 0 6px #E8F6F8,0 0 0 10px #3CA5B1;position:relative}
+.guarantee-seal .seal-top{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#3CA5B1;line-height:1.2}
+.guarantee-seal .seal-pct{font-size:28px;font-weight:800;color:#3CA5B1;line-height:1}
+.guarantee-seal .seal-bot{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#555;line-height:1.2;margin-top:2px}
+
+/* INFO BOX */
+.info-box{background:#F5F5F5;border-left:4px solid #3CA5B1;border-radius:0 8px 8px 0;padding:24px;margin:30px 0}
+
+/* CALLOUT QUOTE */
+.callout-quote{font-style:italic;font-size:20px;color:#3CA5B1;text-align:center;padding:20px 0;font-weight:600;line-height:1.5}
+
+/* COMPARE TABLE */
+.compare-table{width:100%;border-collapse:collapse;margin:30px 0;font-size:15px}
+.compare-table th{background:#3CA5B1;color:#fff;padding:12px;font-weight:700;text-align:center}
+.compare-table td{padding:12px;border-bottom:1px solid #eee;text-align:center}
+.compare-table tr:nth-child(even) td{background:#f9f9f9}
+
+/* FAQ */
+.faq-section{margin:30px 0}
+.faq-item{border-bottom:1px solid #eee}
+.faq-question{width:100%;background:none;border:none;padding:18px 0;font-family:'Poppins',sans-serif;font-size:16px;font-weight:700;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;color:#000}
+.faq-question::after{content:'+';font-size:22px;font-weight:400;color:#3CA5B1;flex-shrink:0;margin-left:12px}
+.faq-item.open .faq-question::after{content:'\2212'}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .3s;font-size:15px;line-height:1.6;color:#444}
+.faq-item.open .faq-answer{max-height:600px;padding-bottom:18px}
+
+/* SIGN OFF */
+.sign-off{text-align:center;margin:30px 0;font-size:16px;color:#555}
+
+/* STICKY FOOTER — hidden until product reveal */
+.sticky-footer{position:fixed;bottom:0;left:0;right:0;z-index:100;background:#000;padding:12px 20px;display:flex;align-items:center;justify-content:center;gap:20px;opacity:0;pointer-events:none;transition:opacity .3s}
+.sticky-footer.visible{opacity:1;pointer-events:auto}
+.sticky-footer .footer-text{color:#fff;text-align:center}
+.sticky-footer .footer-text .sale-title{font-size:18px;font-weight:800}
+.sticky-footer .footer-text .sale-sub{font-size:13px}
+.sticky-footer .footer-btn{background:#22B401;color:#fff;font-size:15px;font-weight:800;padding:12px 28px;border-radius:6px;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,.3);white-space:nowrap}
+
+.section{padding:10px 0}
+</style>
+</head>
+<body>
+
+<!-- STICKY HEADER (hidden until product reveal) -->
+<header class="sticky-header" id="stickyHeader">
+  <span class="logo-text">UPROOT CLEAN</span>
+  <a href="https://uprootclean.com/products/uproot-washing-machine-cleaner-pro" class="header-btn">Shop Now</a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="content">
+    <h1>New Research Shows: <em>Your Washing Machine Is Dirtier Than&nbsp;Your&nbsp;Toilet</em><br><span style="font-size:.75em;font-weight:600;">(If You Have Pets It's NOT Even&nbsp;Close)</span></h1>
+    <p class="subheadline">A Living, Breathing Bacteria Is Growing Inside Millions Of American Washing&nbsp;Machines.<br>Making Your Clothes, Towels, And Bedding Smell Musty <strong>No Matter How Much You Wash&nbsp;Them.</strong></p>
+    <p class="hook">This simple 7-Second Fix Eliminates Any Bacteria Inside Your Washing Machine And Makes Your Laundry Smell Clean And Fresh Again After Just One&nbsp;Cycle.</p>
+    <hr class="divider">
+
+    <!-- SPLIT COMPARISON: Washer vs Toilet -->
+    <div class="split-compare">
+      <div class="split-side">
+        <img src="https://cdn2.videowise.com/custom-videos/thumbnails/1767160192328_44086ba3-6cb4-4fb0-b97c-2c9aa5116020.webp" alt="Dirty washing machine gasket">
+        <div class="split-overlay">
+          <div class="split-label">Your Washing Machine</div>
+          <div class="split-count red">100,000,000+ bacteria</div>
+        </div>
+      </div>
+      <div class="split-vs">VS</div>
+      <div class="split-side">
+        <img src="ChatGPT%20Image%20Feb%2019%2C%202026%2C%2012_35_14%20PM.png" alt="Clean toilet seat">
+        <div class="split-overlay">
+          <div class="split-label">Your Toilet Seat</div>
+          <div class="split-count green">Less than 5,000 bacteria</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE PROBLEM -->
+<section class="section">
+  <div class="content">
+
+    <p>Ever wonder why your clothes never really smell fully&nbsp;clean?</p>
+
+    <p>Even if you wash them multiple times or wash on &ldquo;sanitize&nbsp;mode&rdquo;?</p>
+
+    <p>Or why your clothes smell clean when they come out of the wash, only to smell musty and stale again by the&nbsp;afternoon?</p>
+
+    <p>The reason why has nothing to do with your detergent, water quality, or how you wash&nbsp;them.</p>
+
+    <p><strong>It's something much, much&nbsp;worse&hellip;</strong></p>
+
+    <h2 class="sub"><span class="highlight">Researchers At The University Of Arizona Discovered The Average Washing Machine Is Harboring MILLIONS Of Toxic&nbsp;Bacteria.</span></h2>
+
+    <p><strong>That means there's more bacteria in your washer than on your toilet&nbsp;seat.</strong></p>
+
+    <p>These aren't harmless strains either&hellip;They're pathogenic bacteria like <strong>E. coli and&nbsp;salmonella.</strong></p>
+
+    <p>These bacteria don't disappear when you run a wash&nbsp;cycle.</p>
+
+    <p><strong>They transfer directly to your "clean"&nbsp;clothes.</strong></p>
+
+    <h2 class="sub">This Bacteria Is On Everything You're&nbsp;Wearing</h2>
+
+    <img src="https://cdn2.videowise.com/custom-videos/thumbnails/1767160219824_e71b9e9a-70df-49db-a1d0-18b374c9bfa0.webp" alt="Dirty laundry bacteria" class="img-right" loading="lazy">
+
+    <div class="qa-block">
+      <p class="question">The top you pulled from your closet this&nbsp;morning?</p>
+      <p class="answer">It's carrying bacteria as we&nbsp;speak.</p>
+
+      <p class="question">The gym clothes you wore this&nbsp;week?</p>
+      <p class="answer">They're covered in&nbsp;it.</p>
+
+      <p class="question">The towels you use after showering or taking a&nbsp;bath?</p>
+      <p class="answer">Those are actually transferring bacteria to your freshly washed&nbsp;skin.</p>
+
+      <p class="question">And the pillowcases you slept on last&nbsp;night?</p>
+      <p class="answer">They're rubbing bacteria into your face all night&nbsp;long.</p>
+    </div>
+
+    <div class="clearfix"></div>
+
+  </div>
+</section>
+
+<!-- PET OWNERS -->
+<section class="section">
+  <div class="content">
+
+    <h2 class="sub">If You Have Pets It's Worse. Much&nbsp;Worse.</h2>
+
+    <p>Dogs and cats shed fur, dander, and saliva into your&nbsp;laundry.</p>
+
+    <p>And unlike human sweat, dirt, or food, your pet's biological compounds actually <strong>FEED the bacteria</strong> inside your&nbsp;machine.</p>
+
+    <p>So every load of laundry makes your washing machine&nbsp;dirtier.</p>
+
+    <h2 class="sub">This Is Why Your Clothes Never Actually Smell Clean &mdash; And Always Smell&nbsp;Musty</h2>
+
+    <p>To make matters&nbsp;worse&hellip;</p>
+
+    <h2 class="sub"><span class="highlight">The Bacteria Living INSIDE Your Washing Machine are IMMUNE to hot water, bleach, vinegar, laundry sanitizers, and even your machine's "self-clean"&nbsp;cycle.</span></h2>
+
+    <p>The good news is, there is a&nbsp;fix.</p>
+
+    <p>A proven solution that eliminates bacteria from every surface inside your washing&nbsp;machine&hellip;</p>
+
+    <p>Including the parts you can't see, scrub, or&nbsp;reach.</p>
+
+    <h2 class="sub">So Your Machine Is Clean And Your Clothes Come Out Fresh Instead Of Musty Or Smelling Like Your&nbsp;Pets</h2>
+
+    <p>But to understand why this cleaner works, you first need to understand why your washing machine is so dirty in the first&nbsp;place&hellip;</p>
+
+  </div>
+</section>
+
+<!-- WHY YOUR MACHINE IS SO DIRTY -->
+<section class="section">
+  <div class="content">
+
+    <div style="background:#E8F6F8;border-radius:8px;padding:30px;margin:30px 0;color:#000;">
+
+      <h2 class="sub" style="margin-top:0;color:#000;">Why Your Washing Machine Is SO&nbsp;Dirty</h2>
+
+      <p>Most people think their washing machine is&nbsp;clean.</p>
+
+      <p>And if you just look at it when it's empty and dry, it probably looks&nbsp;clean&hellip;</p>
+
+      <p>The truth is, it's covered in&nbsp;bacteria.</p>
+
+      <p><strong>The rubber gasket around the&nbsp;door.</strong></p>
+      <p><strong>The seams inside the&nbsp;drum.</strong></p>
+      <p><strong>The drain&nbsp;lines.</strong></p>
+      <p><strong>The detergent&nbsp;dispenser.</strong></p>
+      <p><strong>Even the back of the&nbsp;drum.</strong></p>
+
+      <img src="https://cdn2.videowise.com/custom-videos/thumbnails/1767160192328_44086ba3-6cb4-4fb0-b97c-2c9aa5116020.webp" alt="Dirty washing machine components" class="img-left" loading="lazy">
+
+      <h2 class="sub" style="color:#000;">And Every Load Of Laundry You Do Makes It&nbsp;Worse</h2>
+
+      <p>Here's&nbsp;why.</p>
+
+      <p>Every load of laundry adds more pet hair, dander, and skin oils into your&nbsp;machine.</p>
+
+      <p>Bacteria feed on these compounds and&nbsp;multiply.</p>
+
+      <p>They attach to surfaces inside your machine and form a slimy, protective layer &mdash; scientists call it&nbsp;<strong>"Biofilm."</strong></p>
+
+      <div class="clearfix"></div>
+
+    </div>
+
+    <h2 class="sub">Biofilm Is An Invisible Shield That Protects Bacteria And Makes Your Machine Impossible To&nbsp;Clean</h2>
+
+    <p>It only takes a few wash cycles for biofilm to&nbsp;form.</p>
+
+    <p>Even a brand new machine can become contaminated very&nbsp;quickly.</p>
+
+    <h2 class="sub"><span class="highlight">NONE Of The Common Cleaning Agents Can Break Through The Biofilm And Remove The Bacteria&nbsp;Underneath.</span></h2>
+
+    <p>Not bleach. Not hot water. Not vinegar. Not laundry&nbsp;sanitizers.</p>
+
+    <p>So the bacteria just grow and spread until they're infecting every load of laundry that you&nbsp;do.</p>
+
+    <div class="bold-callout">
+      There's Only One Way To Eliminate Biofilm<br>And Clean Away&nbsp;Bacteria&hellip;<br>
+      And It Comes From The Last Place<br>You'd Ever&nbsp;Expect&hellip;
+    </div>
+
+  </div>
+</section>
+
+<!-- WASHING MACHINES GETTING DIRTIER (BOXED) -->
+<section class="section">
+  <div class="content">
+    <div class="boxed">
+
+      <h2 class="sub" style="margin-top:0;">Why Modern Washing Machines Are Actually Getting&nbsp;DIRTIER</h2>
+
+      <p>In 2007 federal energy efficiency standards changed, which forced washing machines to use drastically less&nbsp;water.</p>
+
+      <p>Old top-loaders used up to 40 gallons per&nbsp;load...</p>
+
+      <p>Modern HE machines use as little as&nbsp;7.</p>
+
+      <h2 class="sub">This Government Regulation Accidentally Turned Your Washer Into A Breeding&nbsp;Ground</h2>
+
+      <p>Less water means your machine can't flush out as much&nbsp;bacteria.</p>
+
+      <p>Not to mention the sealed front-load doors trap moisture between&nbsp;cycles.</p>
+
+      <p>Which means bacteria have a warm, wet environment to grow in, even when your machine isn't&nbsp;running.</p>
+
+      <p>And the "self-clean"&nbsp;cycle?</p>
+
+      <p>It doesn't reach behind the drum, inside the gasket folds, or deep in the drain lines where the bacteria&nbsp;lives.</p>
+
+      <p>That means washing machines are getting dirtier and&nbsp;dirtier.</p>
+
+      <img src="https://cdn2.videowise.com/custom-videos/thumbnails/1767160334041_2bcedfdb-ceac-4d71-82ba-850c68c3340a.webp" alt="Water usage comparison: old vs new washing machines" class="section-img" loading="lazy">
+
+    </div>
+  </div>
+</section>
+
+<!-- THE ANSWER: SPACE -->
+<section class="section">
+  <div class="content">
+
+    <h2 class="sub center">So If Bleach, Vinegar, And Laundry Sanitizers Don&rsquo;t Work&hellip; And Your Machine Is Getting&nbsp;Dirtier?<br>How Do You Actually Clean Your Washing&nbsp;Machine?</h2>
+
+    <p>The answer was discovered in the last place you'd ever&nbsp;expect:</p>
+
+    <p><strong style="font-size:24px;">Space.</strong></p>
+
+    <img src="https://cdn2.videowise.com/custom-videos/thumbnails/1767160238648_3526e037-9a93-4826-b16f-8665d5197d52.webp" alt="International Space Station" class="section-img" loading="lazy">
+
+    <h2 class="sub">Two Hundred Fifty Miles Above Earth, The Same Buildup Was Costing NASA Millions Of Dollars And Putting Astronauts' Lives At&nbsp;Risk</h2>
+
+    <p>Inside the space station there's no fresh air and no fresh&nbsp;water.</p>
+
+    <p>Just a warm, humid, sealed environment where bacteria multiply&nbsp;fast.</p>
+
+    <p>This buildup was forming inside the water recycling systems, clogging filtration components, and threatening the crew's water&nbsp;supply.</p>
+
+    <p>Every repair cost millions, because you can't call a plumber in&nbsp;space.</p>
+
+    <h2 class="sub">Every Advanced Cleaning Method Known To Science&nbsp;Failed</h2>
+
+    <p>NASA tried everything&hellip;</p>
+
+    <p>Military-grade sanitizers, industrial bleach, UV&nbsp;radiation.</p>
+
+    <h2 class="sub">Nothing Could Break Through The Biofilm's&nbsp;Armor</h2>
+
+    <p>The bacteria would go dormant &mdash; then wake right back up the moment warmth and moisture&nbsp;returned.</p>
+
+    <p><strong>Scientists call this odor&nbsp;rebloom.</strong></p>
+
+    <p>It's the same thing happening in your washing&nbsp;machine.</p>
+
+    <p>Your clothes smell clean out of the dryer, but the moment your body heat warms the fabric, <strong>the dormant bacteria wake up and the smell comes&nbsp;back.</strong></p>
+
+    <p>NASA's research confirmed one&nbsp;thing:</p>
+
+    <p><strong>If you can't destroy the biofilm, you'll never kill the&nbsp;bacteria.</strong></p>
+
+    <p>That discovery led scientists to develop a new kind of cleaning&nbsp;method&hellip;</p>
+
+    <p>A multi-enzyme cleaning formula that could break through the biofilm and destroy the bacteria hiding&nbsp;underneath.</p>
+
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="section">
+  <div class="content">
+
+    <h2 class="sub center">The Results Blew Past Every&nbsp;Expectation.</h2>
+
+    <p>The new formula eliminated odor-causing compounds that no conventional cleaner could&nbsp;reach.</p>
+
+    <p>These bacterial compounds weren't just covered&nbsp;up.</p>
+
+    <p><strong>They were eliminated at the molecular&nbsp;level.</strong></p>
+
+    <p>That's the difference between your clothes smelling like your pets... or smelling fresh and clean all day&nbsp;long.</p>
+
+  </div>
+</section>
+
+<!-- PRODUCT INTRODUCTION -->
+<section class="section">
+  <div class="content">
+
+    <h2 class="sub center">For The First Time Ever, This NASA-Inspired Technology Is Available To The&nbsp;Public</h2>
+
+    <div class="info-box">
+      <p>Thanks to <strong class="teal">Uproot Clean</strong>, an innovative pet cleaning brand on a mission to help 1,000,000 pet owners live cleaner, happier lives with their&nbsp;pets.</p>
+      <p>Uproot Clean has helped countless pet owners remove hair from carpets, furniture, and&nbsp;clothing.</p>
+      <p>But after more than 300,000 customers and 26,000+ five-star reviews, they kept hearing the same&nbsp;complaint:</p>
+    </div>
+
+    <p class="callout-quote">"I got the hair off, but my clothes still smell musty&hellip;like my&nbsp;dog."</p>
+
+    <h2 class="sub">No Laundry Detergent Can Fix&nbsp;This</h2>
+
+    <p>Uproot's R&amp;D team dug into the&nbsp;research.</p>
+
+    <p>Determined to find a way to turn NASA's discovery into something any pet owner could&nbsp;use.</p>
+
+    <p>Because the reality&nbsp;is&hellip;</p>
+
+    <p>Detergents on store shelves are ONLY designed for human dirt, sweat, food stains, and&nbsp;grass.</p>
+
+    <p>They simply can't penetrate biofilm and remove the bacteria growing inside your washing&nbsp;machine.</p>
+
+    <p>Uproot adapted this multi-enzyme method and packed it into a single-use&nbsp;tablet.</p>
+
+    <p>It deep cleans your washing machine and eliminates odor-causing bacteria at the&nbsp;source.</p>
+
+    <p>So your clothes finally smell cleaner, and fresher after every&nbsp;load.</p>
+
+    <p>And now it's FINALLY ready for the&nbsp;public&hellip;</p>
+
+    <h2 class="sub center" id="productReveal">Introducing: Uproot Clean Washing Machine&nbsp;Cleaner</h2>
+
+    <img src="https://cdn2.videowise.com/custom-videos/thumbnails/1767160354403_920a864e-7bfd-4517-8a75-572be49aac10.webp" alt="Uproot Clean Washing Machine Cleaner" style="display:block;max-width:400px;width:100%;margin:30px auto;border-radius:4px" loading="lazy">
+
+    <p>The first washing machine cleaner that uses NASA-inspired multi-enzyme formula to destroy the buildup hiding in your washing&nbsp;machine.</p>
+
+    <p>Other cleaners can't do&nbsp;this.</p>
+
+    <p>They weren't designed to break through biofilm, so the bacteria would survive and grow with every&nbsp;cycle.</p>
+
+    <p><strong class="teal">Uproot's Washing Machine Cleaner penetrates the biofilm and removes the bacteria at the&nbsp;source.</strong></p>
+
+    <a href="https://uprootclean.com/products/uproot-washing-machine-cleaner-pro" class="cta-btn">Get Fresher Laundry &mdash; Try It Risk Free</a>
+    <p class="cta-sub">Free Shipping &bull; Money Back Guarantee</p>
+
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section">
+  <div class="content">
+
+    <h2 class="sub">Here's Exactly What Happens When You Drop One Tab Into Your&nbsp;Machine</h2>
+
+    <p>Every two weeks, you drop a single tab into an empty washing machine drum and run a cleaning&nbsp;cycle.</p>
+
+    <p>As the tab dissolves, it releases a concentrated multi-enzyme complex that reaches the hidden areas of your&nbsp;machine.</p>
+
+    <p>Where bacteria are living and contaminating every load you&nbsp;wash.</p>
+
+    <h2 class="sub center">The 3-Enzyme Attack Destroys Biofilm From The Inside&nbsp;Out</h2>
+
+    <div class="enzyme-step">
+      <div class="enzyme-num">1</div>
+      <img src="https://cdn2.videowise.com/custom-videos/thumbnails/1767160412076_72427ff0-17ce-47c6-9fa5-8a0aced18f6d.webp" alt="Protease" class="enzyme-icon" loading="lazy">
+      <div class="enzyme-text">
+        <strong>Enzyme No. 1: Protease</strong>
+        Protease cracks through the biofilm, so the bacteria is exposed and ready to be cleaned&nbsp;away.
+      </div>
+    </div>
+
+    <div class="enzyme-step">
+      <div class="enzyme-num">2</div>
+      <img src="https://cdn2.videowise.com/custom-videos/thumbnails/1767160414283_f69608f3-efa6-410b-a796-fcc6d355dce2.webp" alt="Amylase" class="enzyme-icon" loading="lazy">
+      <div class="enzyme-text">
+        <strong>Enzyme No. 2: Amylase</strong>
+        Breaks down the organic buildup that bacteria feed on. Now the bacteria have no way to grow or&nbsp;multiply.
+      </div>
+    </div>
+
+    <div class="enzyme-step">
+      <div class="enzyme-num">3</div>
+      <img src="https://cdn2.videowise.com/custom-videos/thumbnails/1767160416508_dd2cf447-1a1c-4871-bf1c-b04a606f2d31.webp" alt="Lipase" class="enzyme-icon" loading="lazy">
+      <div class="enzyme-text">
+        <strong>Enzyme No. 3: Lipase</strong>
+        Dissolves any sticky residue that's helping the biofilm cling to the surfaces inside your machine. So there's nothing anchoring the bacteria to your machine. They get flushed out in the next rinse&nbsp;cycle.
+      </div>
+    </div>
+
+    <div class="info-box" style="text-align:center;">
+      <p style="margin-bottom:0;"><strong>But to make sure nothing survives, a chelating acid and oxygen bleach move in and destroy any bacteria left&nbsp;behind.</strong></p>
+    </div>
+
+    <!-- COMPETITOR COMPARISON -->
+    <div class="boxed" style="margin:30px 0;">
+      <h2 class="sub center" style="margin-top:0;">Why Common Cleaners Can't Fix&nbsp;This</h2>
+      <table class="compare-table">
+        <thead><tr><th></th><th style="background:#2a8f9b;"><strong class="teal" style="color:#fff;">Uproot&nbsp;Clean</strong></th><th>Bleach</th><th>Vinegar</th><th>Affresh / Tide</th><th>&ldquo;Self-Clean&rdquo;</th></tr></thead>
+        <tbody>
+          <tr><td style="text-align:left;"><strong>Kills Surface&nbsp;Bacteria?</strong></td><td><strong style="color:#22B401;font-size:18px;">&#10003;</strong></td><td><strong style="color:#22B401;font-size:18px;">&#10003;</strong></td><td>Partial</td><td><strong style="color:#22B401;font-size:18px;">&#10003;</strong></td><td>Partial</td></tr>
+          <tr><td style="text-align:left;"><strong>Penetrates&nbsp;Biofilm?</strong></td><td><strong style="color:#22B401;font-size:18px;">&#10003;</strong></td><td><strong style="color:#ff4444;font-size:18px;">&#10007;</strong></td><td><strong style="color:#ff4444;font-size:18px;">&#10007;</strong></td><td><strong style="color:#ff4444;font-size:18px;">&#10007;</strong></td><td><strong style="color:#ff4444;font-size:18px;">&#10007;</strong></td></tr>
+          <tr><td style="text-align:left;"><strong>Deep Cleans Your Washing&nbsp;Machine?</strong></td><td><strong style="color:#22B401;font-size:18px;">&#10003;</strong></td><td><strong style="color:#ff4444;font-size:18px;">&#10007;</strong></td><td><strong style="color:#ff4444;font-size:18px;">&#10007;</strong></td><td><strong style="color:#ff4444;font-size:18px;">&#10007;</strong></td><td><strong style="color:#ff4444;font-size:18px;">&#10007;</strong></td></tr>
+        </tbody>
+      </table>
+      <p style="text-align:center;font-size:15px;color:#555;margin-bottom:0;">Only a multi-enzyme formula can break through biofilm and reach the bacteria hiding behind the drum, inside the gasket, and deep in the drain&nbsp;lines.</p>
+    </div>
+
+    <!-- INGREDIENT TRANSPARENCY -->
+    <div class="info-box" style="margin:30px 0;">
+      <h2 class="sub" style="margin-top:0;">What's Inside Every Machine Cleaning Tab (And&nbsp;Why)</h2>
+      <p><strong class="teal">Protease, Amylase &amp; Lipase</strong> &mdash; The multi-enzyme complex that penetrates and breaks down biofilm so bacteria can't&nbsp;hide.</p>
+      <p><strong class="teal">Sodium Percarbonate</strong> &mdash; Oxygen bleach that destroys bacteria after the enzymes strip away their&nbsp;protection.</p>
+      <p><strong class="teal">Citric Acid</strong> &mdash; Chelating agent that dissolves mineral deposits and hard water buildup that trap&nbsp;bacteria.</p>
+      <p style="margin-bottom:0;"><strong class="teal">Tea Polyphenols</strong> &mdash; Natural deodorizer that neutralizes odor at the molecular level &mdash; instead of just masking&nbsp;it.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- 4 SIMPLE STEPS -->
+<section class="section">
+  <div class="content">
+
+    <h2 class="sub center">It Takes 7 Seconds And 4 Simple&nbsp;Steps</h2>
+
+    <div class="steps-box">
+      <div class="step-item"><div class="step-num">1</div><p><strong>Ensure that your washing machine is completely&nbsp;empty</strong></p></div>
+      <div class="step-item"><div class="step-num">2</div><p><strong>Put ONE tablet directly into the washing machine drum</strong> (Do not put in the detergent&nbsp;compartment)</p></div>
+      <div class="step-item"><div class="step-num">3</div><p><strong>Run a wash on "Normal/ Hot Water" Or "Clean Washer"&nbsp;Cycle</strong></p></div>
+      <div class="step-item"><div class="step-num">4</div><p><strong>Post cycle wipe away any left over&nbsp;residue</strong></p></div>
+    </div>
+
+    <p style="text-align:center;font-weight:700">That's it. You're&nbsp;done!</p>
+
+    <h2 class="sub center">For The First Time In Years, Your Machine Is Actually&nbsp;Clean</h2>
+
+    <p><strong>Your Clothes Come Out Smelling Clean With No Lingering Bacteria, Musty Smell, Or Pet&nbsp;Odor.</strong></p>
+
+  </div>
+</section>
+
+<!-- BEFORE/AFTER -->
+<section class="section">
+  <div class="content">
+
+    <h2 class="sub center">Look At What Came Out Of These Machines After Just One Cycle With Uproot's Washing Machine&nbsp;Cleaner</h2>
+
+    <div class="ba-grid">
+      <div class="ba-card">
+        <h4>Mold &amp; Mildew</h4>
+        <div class="ba-pair">
+          <div class="ba-col"><img src="https://cdn2.videowise.com/custom-videos/thumbnails/1767160192328_44086ba3-6cb4-4fb0-b97c-2c9aa5116020.webp" alt="Mold before" loading="lazy"><p class="ba-label">Before</p></div>
+          <div class="ba-col"><img src="https://cdn2.videowise.com/custom-videos/thumbnails/1767160172595_6a143a5c-4b49-4719-89bd-4a44d7d54505.webp" alt="Mold after" loading="lazy"><p class="ba-label">After</p></div>
+        </div>
+      </div>
+      <div class="ba-card">
+        <h4>Pet Hair</h4>
+        <div class="ba-pair">
+          <div class="ba-col"><img src="https://cdn2.videowise.com/custom-videos/thumbnails/1767160195165_7504b78f-24a7-4dca-b843-1c53af2b7fa2.webp" alt="Pet hair before" loading="lazy"><p class="ba-label">Before</p></div>
+          <div class="ba-col"><img src="https://cdn2.videowise.com/custom-videos/thumbnails/1767160175134_4213c8a3-32df-4699-8557-8e1d3bc34b00.webp" alt="Pet hair after" loading="lazy"><p class="ba-label">After</p></div>
+        </div>
+      </div>
+      <div class="ba-card">
+        <h4>Dirt</h4>
+        <div class="ba-pair">
+          <div class="ba-col"><img src="https://cdn2.videowise.com/custom-videos/thumbnails/1767160211279_b991fcab-d234-44b5-ba09-14f7cf724d50.webp" alt="Dirt before" loading="lazy"><p class="ba-label">Before</p></div>
+          <div class="ba-col"><img src="https://cdn2.videowise.com/custom-videos/thumbnails/1767160178154_66d3b7a2-b841-48a3-9676-4ca3b9a9814a.webp" alt="Dirt after" loading="lazy"><p class="ba-label">After</p></div>
+        </div>
+      </div>
+      <div class="ba-card">
+        <h4>Detergent Residue</h4>
+        <div class="ba-pair">
+          <div class="ba-col"><img src="https://cdn2.videowise.com/custom-videos/thumbnails/1767160214117_45a683dd-7074-452e-b8a0-c54d2fba4ee9.webp" alt="Residue before" loading="lazy"><p class="ba-label">Before</p></div>
+          <div class="ba-col"><img src="https://cdn2.videowise.com/custom-videos/thumbnails/1767160180851_6099b952-1b55-4f28-b529-816f30e4e5a5.webp" alt="Residue after" loading="lazy"><p class="ba-label">After</p></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- RESULTS TIMELINE -->
+<section class="section">
+  <div class="content">
+    <div class="boxed">
+      <h2 class="sub center" style="margin-top:0;">What To&nbsp;Expect</h2>
+      <div class="step-item"><div class="step-num">1</div><p><strong>After Your 1st Clean:</strong> Visible residue and buildup flushed out. Machine smells noticeably fresher. Your next load of laundry comes out&nbsp;cleaner.</p></div>
+      <div class="step-item"><div class="step-num">2</div><p><strong>After Your 2nd Clean (Week 2):</strong> Biofilm layers continue breaking down. Musty smell on clothes starts to disappear. Towels smell clean even after a few&nbsp;days.</p></div>
+      <div class="step-item"><div class="step-num">3</div><p><strong>After Your 3rd Clean (Week 4):</strong> Machine is fully decontaminated. Clothes smell fresh all day &mdash; even gym clothes and pet bedding. The musty rebloom is&nbsp;gone.</p></div>
+      <p style="text-align:center;font-size:15px;color:#555;margin-bottom:0;"><em>Results vary by machine condition. Heavily contaminated machines may take 2&ndash;3 cycles to fully&nbsp;clean.</em></p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="content">
+
+    <h2 class="sub center">Here's What Pet Owners Are Saying After Their First&nbsp;Wash</h2>
+
+    <div class="testimonial">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="review-title">Tried Other Products &mdash; Uproot Beat Them&nbsp;All</p>
+      <p class="review-text">"I have some very hairy pets and my washer gets very musty. I've tried other products, but Uproot beat them&nbsp;all!"</p>
+      <p class="reviewer">&mdash; Dawn&nbsp;B.</p>
+    </div>
+
+    <div class="testimonial">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="review-title">Honestly Surprised By How Well This&nbsp;Worked</p>
+      <p class="review-text">"I was honestly surprised by how well this works. My washing machine was starting to smell musty, and after using this cleaner, it smells fresh and looks so much cleaner inside. Super easy to use &mdash; just toss it in and let it do its&nbsp;thing."</p>
+      <p class="reviewer">&mdash; Amanda&nbsp;P.</p>
+    </div>
+
+    <div class="testimonial">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="review-title">Works Like&nbsp;Magic!</p>
+      <p class="review-text">"I thought my washing machine was clean and it was normal for it to have a smell. But once I used the Uproot Washing Machine Cleaner Pro my mind was blown. My towels actually smelled clean! They came out of the dryer soft and feeling clean. My clothes looked and smelled better. I was honestly amazed at how well the product&nbsp;worked."</p>
+      <p class="reviewer">&mdash; Heather&nbsp;M.</p>
+    </div>
+
+    <a href="https://uprootclean.com/products/uproot-washing-machine-cleaner-pro" class="cta-btn">Eliminate Pet Odor From Your Laundry &mdash; Shop Now</a>
+    <p class="cta-sub">Free Shipping &bull; Money Back Guarantee</p>
+
+  </div>
+</section>
+
+<!-- OFFER -->
+<section class="section">
+  <div class="content">
+
+    <h2 class="sub center" style="font-size:26px;"><span class="highlight">Special Internet Only&nbsp;Discount</span></h2>
+
+    <p>We're running a special internet only discount on this page. That means you can try Uproot's Washing Machine Cleaner for the lowest price we&nbsp;ever&nbsp;offered.</p>
+
+    <h2 class="sub center">Try Uproot's Washing Machine Cleaner For Just&nbsp;$19.99</h2>
+
+    <p>That's less than the cost of a single load of dry&nbsp;cleaning.</p>
+
+    <p>And right now, when you grab a 4-pack, you pay just <strong>$39.99</strong> &mdash; that breaks down to <strong>$0.41 per&nbsp;tab.</strong></p>
+
+    <p><strong>Less than a cup of coffee to eliminate the bacteria that's making your clothes smell like your&nbsp;pets.</strong></p>
+
+    <p>We can offer this price because we sell direct on this page &mdash; no retail markup, no middleman&nbsp;fees.</p>
+
+    <p>And if it doesn't work for you? <strong>You don't&nbsp;pay.</strong> Every order is backed by a full money-back&nbsp;guarantee.</p>
+
+    <p>But this pricing won't last &mdash; we can only hold it for a limited&nbsp;time.</p>
+
+    <a href="https://uprootclean.com/products/uproot-washing-machine-cleaner-pro" class="cta-btn">Claim Your Discount &mdash; Save Up To 50% Today</a>
+    <p class="cta-sub">Free Shipping &bull; Money Back Guarantee</p>
+
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section class="section">
+  <div class="content">
+    <div class="guarantee-box">
+
+      <div class="guarantee-seal">
+        <span class="seal-top">Money Back</span>
+        <span class="seal-pct">100%</span>
+        <span class="seal-bot">Guarantee</span>
+      </div>
+
+      <p><strong>Every Order Is Backed By A FULL Money Back&nbsp;Guarantee</strong></p>
+      <p>Try Uproot's Washing Machine Cleaner Risk&nbsp;Free.</p>
+      <p>Which means if you don't like it, or you don't think it works for you &mdash; you don't&nbsp;pay.</p>
+      <p><strong>Reach out to our customer support team and we'll make it right with a full, no questions asked&nbsp;refund.</strong></p>
+
+    </div>
+  </div>
+</section>
+
+<!-- SAVE MORE / ULTRA -->
+<section class="section">
+  <div class="content">
+
+    <h2 class="sub">Why Smart Pet Owners Are Stocking&nbsp;Up</h2>
+
+    <p>It's important to use Uproot's Washing Machine Cleaner every 2 weeks, consistently&hellip;</p>
+    <p>Otherwise, biofilm bacteria can build up again&hellip; And before long every load of laundry will smell&nbsp;musty.</p>
+    <p>That's why we created even deeper discounts on packs of two or&nbsp;more.</p>
+    <p>This will make it easier to use the Uproot Washing Machine Cleaner Tabs over the long&nbsp;haul.</p>
+
+    <h2 class="sub">We Created Something Even Stronger For Homes With Multiple&nbsp;Pets</h2>
+
+    <p>The <strong class="teal">Uproot Clean Washing Machine Cleaner Ultra</strong> is a special upgraded version of our original Pro&nbsp;tablet.</p>
+    <p>It's made with <strong>40% more cleaning power</strong> and a higher concentration of every active&nbsp;ingredient.</p>
+    <p>Plus the Ultra tablets contain <strong>Cyclodextrin</strong>, a powerful odor neutralizer which traps smelly odor molecules so they can't reactivate on your&nbsp;clothes.</p>
+
+    <h2 class="sub">Choose Ultra If Any Of These Sound Like Your&nbsp;Home</h2>
+
+    <p>We recommend the Ultra Version for households with 2 or more pets, or if you have a large dog or a heavy&nbsp;shedder.</p>
+    <p>Or you just want the cleanest washing machine&nbsp;possible.</p>
+
+    <img src="ProVUltra.png" alt="Pro vs Ultra comparison" class="section-img" loading="lazy">
+
+    <h2 class="sub center"><span class="highlight">This Is The Option Most Pet Owners&nbsp;Choose</span></h2>
+
+    <p>So if you want the biggest savings, and the most cleaning power, choose a 4 pack of ultra strength&nbsp;tabs.</p>
+    <p>This is what most customers&nbsp;grab.</p>
+    <p>But no matter which option you pick, you still save&nbsp;today.</p>
+    <p>Just click below now and select the option that's best for&nbsp;you.</p>
+
+    <a href="https://uprootclean.com/products/uproot-washing-machine-cleaner-pro" class="cta-btn">Choose Your Pack &amp; Save Up To 50%</a>
+    <p class="cta-sub">Free Shipping &bull; Money Back Guarantee</p>
+
+  </div>
+</section>
+
+<!-- FINAL TESTIMONIALS -->
+<section class="section">
+  <div class="content">
+
+    <div class="testimonial">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="review-text">"My washer had a funky smell, so I tried this. It's wonderful &mdash; no smell, no smelly clothes anymore! Definitely will buy&nbsp;again!"</p>
+      <p class="reviewer">&mdash; Tamara T., Verified&nbsp;Buyer</p>
+    </div>
+
+    <div class="testimonial">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="review-text">"I bought the washer cleaner and it worked really well. I will be using it monthly to keep the stink out of the washing&nbsp;machine."</p>
+      <p class="reviewer">&mdash; Julie L., Verified&nbsp;Buyer</p>
+    </div>
+
+    <div class="testimonial">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="review-text">"I only used it once so far but the smell test showed improvement. Will continue to use. I have horses and the machine is frequently&nbsp;tested!"</p>
+      <p class="reviewer">&mdash; Janet W., Verified&nbsp;Buyer</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- EMOTIONAL CLOSE -->
+<section class="section">
+  <div class="content">
+
+    <h2 class="sub center">You Have A Choice To&nbsp;Make</h2>
+
+    <p>You can keep washing your clothes the same way &mdash; hoping the smell eventually goes away on its&nbsp;own.</p>
+
+    <p>Keep re-washing loads that should already be&nbsp;clean.</p>
+
+    <p>Keep wondering if the people around you can smell what you&nbsp;can't.</p>
+
+    <p><strong>Or you can fix the actual problem &mdash;&nbsp;once.</strong></p>
+
+    <p>Drop one tab into your machine. Run a cycle. And for the first time in months (maybe years), pull your clothes out and <strong>they actually smell&nbsp;clean.</strong></p>
+
+    <p>No musty towels. No pet odor on your shirts. No&nbsp;re-washing.</p>
+
+    <p><strong>If it doesn't work, you don't&nbsp;pay.</strong> That's our&nbsp;guarantee.</p>
+
+    <p>Click below, choose the option that's right for you, and finally enjoy fresh laundry that actually smells&nbsp;clean.</p>
+
+    <a href="https://uprootclean.com/products/uproot-washing-machine-cleaner-pro" class="cta-btn large">Get Fresh Laundry &mdash; Shop Now</a>
+    <p class="cta-sub">Free Shipping &bull; Money Back Guarantee</p>
+
+    <div class="sign-off">
+      <p>Here's to fresh laundry and many happy, healthy years with your pets.&nbsp;&#128062;</p>
+      <p><strong>&mdash; The Uproot Clean Team</strong></p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" style="background:#F5F5F5;padding:40px 0">
+  <div class="content">
+
+    <h2 class="sub center" style="margin-top:0">Got Questions? We've Got&nbsp;Answers</h2>
+
+    <div class="faq-section">
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">How Do I Use The Uproot Washing Machine Cleaner&nbsp;Tabs?</button>
+        <div class="faq-answer">
+          <p>1. Ensure that the washing machine is completely&nbsp;empty</p>
+          <p>2. Put one tablet directly into the washing machine drum, DO NOT PUT IT IN THE DETERGENT&nbsp;COMPARTMENT</p>
+          <p>3. Run on "Normal / Hot Water" or "Clean Washer"&nbsp;Cycle</p>
+          <p>4. Post-cycle, wipe away any left over&nbsp;residue</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Does It Dissolve Pet&nbsp;Hair?</button>
+        <div class="faq-answer">
+          <p>No, our tabs don't completely dissolve pet hair but they help in loosening them from being stuck in the washer. They do contain proteins to dissolve the hair, but we have intentionally not made them strong to ensure there is ZERO damage done to the washing machine&nbsp;itself.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Is There A&nbsp;Fragrance?</button>
+        <div class="faq-answer">
+          <p>With the Pro tab, no. With the Ultra there is a light fragrance from the&nbsp;Cyclodextrin.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">What Are The&nbsp;Ingredients?</button>
+        <div class="faq-answer">
+          <p><strong>Enzyme Cleaning Complex:</strong> Lipase, Protease, Alpha-Amylase</p>
+          <p><strong>Other Ingredients:</strong> Fatty alcohol polyoxythylene, Sodium Percarbonate, Sodium Carbonate, Sodium Silicate, Citric Acid, Sodium Polyacrylate, Alkali Protease, Tea&nbsp;Polyphenols</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Doesn't My Machine Clean&nbsp;Itself?</button>
+        <div class="faq-answer">
+          <p>Detergent does not clean your machine! It actually fuels the problem and contributes to the harmful buildup. After some time, your wash cycles become a waste of water, time, money, and energy. Clothes just don't get clean anymore. That's why your washer needs to be regularly deep cleaned. Residue builds up in your washer, and when combined with the dark and humid environment, it leads to a foul smell. Eventually, these unpleasant elements find their way back onto your clothes and&nbsp;body.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Where Do I Put The&nbsp;Tablet?</button>
+        <div class="faq-answer">
+          <p>The tablet should be placed directly into the drum. DO NOT put the tablet in the detergent dispenser&nbsp;tray.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">How Often Do I Use The&nbsp;Tablets?</button>
+        <div class="faq-answer">
+          <p>We recommend cleaning every 2 weeks, or whenever you feel that musty odors are&nbsp;present.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Will This Work In My&nbsp;Washer?</button>
+        <div class="faq-answer">
+          <p>Yes, Uproot Washing Machine Cleaner Pro is compatible with all washing machines including: High Efficiency (HE), Front load, Top load, Stainless steel interior, and White&nbsp;interior.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- SPACER FOR FOOTER -->
+<div style="height:90px"></div>
+
+<!-- STICKY FOOTER (hidden until product reveal) -->
+<div class="sticky-footer" id="stickyFooter">
+  <div class="footer-text">
+    <div class="sale-title">WINTER SALE</div>
+    <div class="sale-sub">Buy 2 Get 2 Free + Free Gifts</div>
+  </div>
+  <a href="https://uprootclean.com/products/uproot-washing-machine-cleaner-pro" class="footer-btn">Buy Now</a>
+</div>
+
+<!-- JS: Scroll-triggered CTAs + FAQ -->
+<script>
+(function(){
+  var header=document.getElementById('stickyHeader');
+  var footer=document.getElementById('stickyFooter');
+  var trigger=document.getElementById('productReveal');
+  if(!trigger)return;
+  var shown=false;
+  function check(){
+    var rect=trigger.getBoundingClientRect();
+    if(rect.top<window.innerHeight&&!shown){
+      shown=true;
+      header.classList.add('visible');
+      footer.classList.add('visible');
+    }
+  }
+  window.addEventListener('scroll',check,{passive:true});
+  check();
+})();
+</script>
+
+</body>
+</html>
